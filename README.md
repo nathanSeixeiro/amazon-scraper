@@ -47,7 +47,7 @@ For detailed information about the challenge and requirements, please [click her
 
 ---
 
-**Note**: *Note*: The Amazon data policy notice us that they delimited the number of requests for segurance 
+**Note**: The Amazon data policy notice us that they delimited the number of requests for segurance 
 and proteccion. For this maybe the code presents instability e doesn't work every time.
 
 But I made a lots of requests and this works well when the requests are liberated!
