@@ -21,7 +21,6 @@ document.addEventListener("DOMContentLoaded", function () {
       // Send a fetch request to the API with the entered keyword
       const response = await fetch(
         `http://localhost:3000/api/scrape?keyword=${keyword}`
-        // `https://fantastic-capybara-gj575xjx4r4hpv7j-3000.app.github.dev/api/scrape?keyword=${keyword}`
       );
 
       // Check if the response status is OK, or else throw an error
@@ -55,6 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const productDiv = document.createElement("div");
         productDiv.classList.add("product");
 
+        // create element add content and create a class for css selector
         const title = document.createElement("h2");
         title.textContent = product.title || "N/A";
         title.classList.add("product-title");
