@@ -1,10 +1,9 @@
-const express = require('express');
-const axios = require('axios');
-const cheerio = require('cheerio');
-
+import express from "express";
+import axios from "axios";
+import cheerio from "cheerio";
 const app = express();
 
-app.get('/api/scrape', async (req, res) => {
+app.get('/', async (req, res) => {
     const { keyword } = req.query;
     const url = `https://www.amazon.com/s?k=${keyword}`;
 
@@ -25,6 +24,6 @@ app.get('/api/scrape', async (req, res) => {
     res.json(products);
 });
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3003;
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

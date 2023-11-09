@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "web scraping software for take some informations for first page of amazon for technical test",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "node --watch src/index.js",
+    "exp": "node --watch src/index-example.js"
   },
   "keywords": [],
   "author": "",
