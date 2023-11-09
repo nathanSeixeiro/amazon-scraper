@@ -63,17 +63,17 @@ body {
   align-items: flex-start; /* Alinhe à esquerda */
 }
 
-.product h2 {
+.product-tile {
   font-size: 14px;
   margin: 0 0 10px;
 }
 
-.product p {
+.product-sub {
   font-size: 14px;
   margin: 0;
 }
 
-.product img {
+.product-img {
   max-width: 100%;
   height: auto;
   margin-top: 10px;
