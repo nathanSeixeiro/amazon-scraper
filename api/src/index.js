@@ -1,11 +1,13 @@
 import express from "express";
 import axios from "axios";
 import cheerio from "cheerio";
+import cors from 'cors'
 
 const app = express();
 const port = 3000;
 
 app.use(express.json());
+app.use(cors());
 
 app.get('/api/scrape', async (req, res) => {
   const { keyword } = req.query;
