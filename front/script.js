@@ -20,7 +20,8 @@ document.addEventListener("DOMContentLoaded", function () {
     try {
       // Send a fetch request to the API with the entered keyword
       const response = await fetch(
-        `https://fantastic-capybara-gj575xjx4r4hpv7j-3000.app.github.dev/api/scrape?keyword=${keyword}`
+        `http://localhost:3000/api/scrape?keyword=${keyword}`
+        // `https://fantastic-capybara-gj575xjx4r4hpv7j-3000.app.github.dev/api/scrape?keyword=${keyword}`
       );
 
       // Check if the response status is OK, or else throw an error
@@ -52,24 +53,24 @@ document.addEventListener("DOMContentLoaded", function () {
     data.forEach((product) => {
       if (product && product.title) {
         const productDiv = document.createElement("div");
-        productDiv.className = "product";
+        productDiv.classList.add("product");
 
         const title = document.createElement("h2");
         title.textContent = product.title || "N/A";
-        title.className = "product-title";
+        title.classList.add("product-title");
 
         const rating = document.createElement("p");
         rating.textContent = `Rating: ${product.rating || "N/A"}`;
-        rating.className = "product-sub";
+        rating.classList.add("product-sub");
 
         const numReviews = document.createElement("p");
         numReviews.textContent = `Reviews: ${product.numReviews || "N/A"}`;
-        numReviews.className = "product-sub";
+        numReviews.classList.add("product-sub");
 
         const img = document.createElement("img");
         img.src = product.imgURL;
         img.alt = product.title;
-        img.className = "product-img";
+        img.classList.add("product-img");
 
         productDiv.appendChild(img);
         productDiv.appendChild(title);
