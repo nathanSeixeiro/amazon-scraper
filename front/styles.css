@@ -57,10 +57,10 @@ body {
   padding: 16px;
   margin: 16px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  max-width: 430px; /* Defina um máximo de largura para evitar que o card fique muito largo */
+  max-width: 430px; 
   display: flex;
-  flex-direction: column; /* Alinhe verticalmente os elementos internos */
-  align-items: flex-start; /* Alinhe à esquerda */
+  flex-direction: column;  
+  align-items: flex-start; 
 }
 
 .product-tile {
