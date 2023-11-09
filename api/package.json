@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "node --watch src/index.js",
-    "exp": "node --watch src/index-example.js"
+    "start": "node src/index.js"
   },
   "keywords": [],
   "author": "",
