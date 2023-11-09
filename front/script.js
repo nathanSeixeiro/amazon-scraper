@@ -2,7 +2,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const keywordInput = document.getElementById("keyword");
   const scrapeBtn = document.getElementById("scrapeBtn");
   const resultsDiv = document.getElementById("results");
-
+  const delayBetweenRequests = 5000; 
+  
   scrapeBtn.addEventListener("click", async () => {
     const keyword = keywordInput.value;
 
@@ -12,10 +13,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     try {
-      const response = await fetch(`http://localhost:3000/api/scrape?keyword=${keyword}`);
+      const response = await fetch(
+        `http://localhost:3000/api/scrape?keyword=${keyword}`
+      );
       const data = await response.json();
       console.log(data);
-
       displayResults(data);
     } catch (error) {
       console.error("Failed to fetch data:", error);
@@ -31,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    const products = excludeEmptyItems(data)
+    const products = excludeEmptyItems(data);
     products.forEach((product) => {
       const productDiv = document.createElement("div");
       productDiv.className = "product";
@@ -49,17 +51,21 @@ document.addEventListener("DOMContentLoaded", function () {
       img.src = product.imgURL;
       img.alt = product.title;
 
+      productDiv.appendChild(img);
       productDiv.appendChild(title);
       productDiv.appendChild(rating);
       productDiv.appendChild(numReviews);
-      productDiv.appendChild(img);
 
       resultsDiv.appendChild(productDiv);
     });
 
-    function excludeEmptyItems(products){
-      products = products.filter(product => product.title !== '');
-      return products
+    function excludeEmptyItems(products) {
+      products = products.filter((product) => product.title !== "");
+      return;
     }
+
+    setTimeout(() => {
+      isRequestPending = false;
+    }, delayBetweenRequests);
   }
 });
