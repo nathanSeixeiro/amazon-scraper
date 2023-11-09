@@ -4,6 +4,11 @@ This is a simple web scraping project that allows you to search for Amazon produ
 
 For detailed information about the challenge and requirements, please [click here!](challenge.md)
 
+<div align="center">
+  <img src="./front/assests/amazon-scraper-print.jpeg" alt="print-screen" width="300" height="200">
+<div>
+
+
 ## Technologies Used
 
 - **Node.js**: The backend is built with Node.js, a JavaScript runtime that allows you to run server-side code.
@@ -42,6 +47,9 @@ For detailed information about the challenge and requirements, please [click her
 
 ---
 
-**Note**: Make sure to follow ethical web scraping practices and respect the terms of service of the websites you scrape data from.
+**Note**: I made a lot of requests and the Amazon data policy notice us that they delimited the number of requests for segurance 
+and proteccion. For this maybe the code presents instability e doesn't work every time.
+
+But this works well when the requests are liberated!
 
 Made &nbsp;by Nathan Seixeiro 👨‍💻 &nbsp;[See my LinkedIn](https://www.linkedin.com/in/nathan-seixeiro/) 
