@@ -14,6 +14,8 @@ document.addEventListener("DOMContentLoaded", function () {
     try {
       const response = await fetch(`http://localhost:3000/api/scrape?keyword=${keyword}`);
       const data = await response.json();
+      console.log(data);
+
       displayResults(data);
     } catch (error) {
       console.error("Failed to fetch data:", error);
@@ -21,14 +23,15 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  function displayResults(products) {
+  function displayResults(data) {
     resultsDiv.innerHTML = "";
 
-    if (products.length === 0) {
+    if (data.length === 0) {
       resultsDiv.innerHTML = "No products found.";
       return;
     }
 
+    const products = excludeEmptyItems(data)
     products.forEach((product) => {
       const productDiv = document.createElement("div");
       productDiv.className = "product";
@@ -53,5 +56,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
       resultsDiv.appendChild(productDiv);
     });
+
+    function excludeEmptyItems(products){
+      products = products.filter(product => product.title !== '');
+      return products
+    }
   }
 });
