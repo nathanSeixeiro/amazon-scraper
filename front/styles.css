@@ -50,6 +50,7 @@ body {
 #results img {
   max-width: 100px;
 }
+
 .product {
   background-color: #fff;
   border: 1px solid #ddd;
@@ -68,7 +69,12 @@ body {
   margin: 0 0 10px;
 }
 
-.product-sub {
+.product-rating {
+  font-size: 14px;
+  margin: 0;
+}
+.product-review {
+  color: #007185;
   font-size: 14px;
   margin: 0;
 }

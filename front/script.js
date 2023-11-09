@@ -61,11 +61,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const rating = document.createElement("p");
         rating.textContent = `Rating: ${product.rating || "N/A"}`;
-        rating.classList.add("product-sub");
+        rating.classList.add("product-rating");
 
         const numReviews = document.createElement("p");
         numReviews.textContent = `Reviews: ${product.numReviews || "N/A"}`;
-        numReviews.classList.add("product-sub");
+        numReviews.classList.add("product-review");
 
         const img = document.createElement("img");
         img.src = product.imgURL;
